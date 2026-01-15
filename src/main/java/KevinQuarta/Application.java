@@ -68,9 +68,8 @@ public class Application {
 
 //        Esercizio 2
         System.out.println("--------------ESERCIZIO 2 ");;
-        Map<String,Double> sumOrderCustomer = orders.stream().collect(Collectors.groupingBy((order->order.getCustomer())));
-
-
+        Map<String,Double> sumOrderCustomer = orders.stream().collect(Collectors.groupingBy(order -> order.getCustomer().getName(),Collectors.summingDouble(order->order.getProducts().stream().mapToDouble(product->product.getPrice()).sum())));
+        sumOrderCustomer.forEach((Name,sumPrice)-> System.out.println("Il totale degli ordini di " + Name+" è di : " + sumPrice));
 
 //        Esercizio 3
         System.out.println("--------------ESERCIZIO 3 ");
