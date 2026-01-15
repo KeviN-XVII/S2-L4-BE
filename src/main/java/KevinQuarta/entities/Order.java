@@ -12,10 +12,10 @@ public class Order {
     private String status;
     private LocalDate orderDate;
     private LocalDate deliveryDate;
-    private List<Product> products;
+    private List<KevinQuarta.entities.Product> products;
     private Customer customer;
 
-    public Order( String status, LocalDate orderDate, List<Product> products, Customer customer) {
+    public Order(String status, LocalDate orderDate, List<KevinQuarta.entities.Product> products, Customer customer) {
         this.status = status;
         this.orderDate = orderDate;
         this.deliveryDate = orderDate.plusDays(15);
@@ -55,11 +55,11 @@ public class Order {
         this.deliveryDate = deliveryDate;
     }
 
-    public List<Product> getProducts() {
+    public List<KevinQuarta.entities.Product> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Product> products) {
+    public void setProducts(List<KevinQuarta.entities.Product> products) {
         this.products = products;
     }
 
